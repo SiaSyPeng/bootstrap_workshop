@@ -2,42 +2,102 @@
 <html>
 <head>
   <title>CS Survival Guide</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
-  <nav>
-    <div>
-      <div>
-        <a href="#">CS Survival Guide</a>
+<!--Scrollspy code adopted from https://www.w3schools.com/bootstrap/bootstrap_scrollspy.asp-->
+<body data-spy="scroll" data-target=".navbar">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">CS Survival Guide</a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sth">
+          <span class = "icon-bar"></span>
+          <span class = "icon-bar"></span>
+          <span class = "icon-bar"></span>
+        </button>
       </div>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Favorite Classes</a></li>
-        <li><a href="#">Top Languages</a></li>
+      <div class="collapse navbar-collapse" id="sth">
+      <ul class="nav navbar-nav">
+        <li><a href="#" class="active">Home</a></li>
+        <!--dropdown menu code adopted from https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp-->
+        <li class="dropdown">
+          <a href="#section1" class="dropdown-toggle" data-toggle="dropdown">Advices<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">#1</a></li>
+            <li><a href="#">#2</a></li>
+            <li><a href="#">#3</a></li>
+            <li><a href="#">#4</a></li>
+            <li><a href="#">#5</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#section2" class="dropdown-toggle" data-toggle="dropdown">Favorite Classes<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">CS52</a></li>
+            <li><a href="#">CS52!</a></li>
+            <li><a href="#">CS52!!</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#section3" class="dropdown-toggle" data-toggle="dropdown">Top languages<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Python</a></li>
+            <li><a href="#">Javascript</a></li>
+            <li><a href="#">Java</a></li>
+          </ul>
+        </li>
       </ul>
-      <ul>
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Login</a></li>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Login</a></li>
       </ul>
     </div>
   </nav>
 
-  <div class="page_header">
+  <div class="jumbotron">
     <div>
-      <h1>Dartmouth CS Survival Guide</h1>
-      <p>Welcome to the homepage of the Dartmouth CS Survival Guide – your home
+      <h1 >Dartmouth CS <mark>Survival</mark> Guide</h1>
+      <p>Welcome to the homepage of the Dartmouth CS Survival Guide - your home
         for helpful tips, tricks, and stories to help you get through your time
         as a CS major.</p>
+      <!--modal div from https://www.w3schools.com/bootstrap/bootstrap_modal.asp-->
+      <div class="modalfromw3">
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Are u ready?</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">We wish u...</h4>
+              </div>
+              <div class="modal-body">
+                <p>Good luck!</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="grid_layout">
+    <div class="grid_layout container_fluid" id="section1">
       <h2>Top 6 Common CS Mistakes to Avoid</h2>
-      <div>
-        <div>
+      <div class="row">
+        <div class="col-md-6">
           <h3>#1: Segmentation Faults (Core Dumped)</h3>
         </div>
-        <div>
+        <div class="col-md-6">
           <p>
             As anyone who has programmed in C knows, working with a language
             that is not memory safe can be a blessing and a curse.  One
@@ -48,11 +108,11 @@
           </p>
         </div>
       </div>
-      <div>
-        <div>
-          <h3>#2: Procrastination</h3>
+      <div class="row bg-info">
+        <div class="col-md-6">
+          <h3 >#2: Procrastination</h3>
         </div>
-        <div>
+        <div class="col-md-6">
           <p>
             The only possible thing that makes a CS lab harder is when its
             due at midnight and it’s 10pm.  Being a CS major and procrastinating
@@ -62,11 +122,11 @@
           </p>
         </div>
       </div>
-      <div>
-        <div>
+      <div class="row">
+        <div class="col-md-6">
           <h3>#3: Not Using Git</h3>
         </div>
-        <div>
+        <div class="col-md-6">
           <p>
             As a student, especially if no one else is working on your code,
             using Git can seem tedious and unneccessary.  Why learn this complicated
@@ -77,11 +137,11 @@
           </p>
         </div>
       </div>
-      <div>
-        <div>
+      <div class="row bg-info">
+        <div class="col-md-6">
           <h3>#4: Getting Cooked</h3>
         </div>
-        <div>
+        <div class="col-md-6">
           <p>
             Ever tried taking two systems level programming courses in the same
             term?  Or how about saving an entire CS50 lab until the last minute?
@@ -93,11 +153,11 @@
           </p>
         </div>
       </div>
-      <div>
-        <div>
+      <div class="row">
+        <div class="col-md-6">
           <h3>#5: Forgetting How to Code</h3>
         </div>
-        <div>
+        <div class="col-md-6">
           <p>
             What's that you say?  How could a programmer possibly forget how to
             code?  Well you're right, they probably couldn't.  The problem is
@@ -108,13 +168,90 @@
       </div>
     </div>
 
-    <footer>
-      <ul>
-        <li><a href="#">ORC</a></li>
-        <li><a href="#">Schedule</a></li>
-        <li><a href="#">Major</a></li>
-        <li><a href="#">Professors</a></li>
-      </ul>
+    <!--Carousel code from https://www.w3schools.com/bootstrap/bootstrap_carousel.asp-->
+    <div class="container-fluid row" id="section2">
+      <div class="col-md-1"></div>
+      <div id="myCarousel" class="carousel slide col-md-10" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="images/fav.jpg" alt="fav">
+          <div class="carousel-caption">
+            <h3>Favorite Classes</h3>
+            <p>I only took three cs classes so far...so</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="images/cs52.png" alt="cs52">
+          <div class="carousel-caption">
+            <h3>CS52</h3>
+            <p>Loved it!!!!!!!.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="images/cs1.png" alt="cs1">
+          <div class="carousel-caption">
+            <h3>CS1</h3>
+            <p>I was taught by Farid, so obviously a great class.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="images/cs10.png" alt="cs10">
+          <div class="carousel-caption">
+            <h3>CS10</h3>
+            <p>There are not much options...so</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+      <div class="col-md-1"></div>
+    </div>
+
+    <div class="container-fluid row" id="section3">
+      <h3>Top Languages</h3>
+      <div class="row">
+        <ul>
+          <li><h4>#1: Python</h4></li>
+          <li><h4>#1: Javascript</h4></li>
+          <li><h4>#1: Java</h4></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li><a href="#">ORC</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Schedule</a></li>
+          <li><a href="#">Major</a></li>
+          <li><a href="#">Professors</a></li>
+        </ul>
+      </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
   </html>
